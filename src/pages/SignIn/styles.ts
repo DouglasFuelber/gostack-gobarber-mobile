@@ -5,7 +5,7 @@ export const Container = styled.View`
   align-items: center;
   flex: 1;
   justify-content: center;
-  padding: 0 30px;
+  padding: 0 30px 40px;
 `;
 
 export const Title = styled.Text`
