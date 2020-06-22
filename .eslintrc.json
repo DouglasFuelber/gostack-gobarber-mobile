@@ -36,6 +36,7 @@
     "react/jsx-one-expression-per-line": "off",
     "no-unused-expressions": "off",
     "react-hooks/exhaustive-deps": "warn",
+    "import/no-duplicates": "off",
     "react/jsx-filename-extension": [
       1,
       {
