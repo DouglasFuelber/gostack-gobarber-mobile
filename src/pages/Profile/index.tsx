@@ -22,10 +22,12 @@ import Input from '../../components/Input';
 
 import {
   Container,
+  BackButton,
   Title,
   UserAvatarButton,
   UserAvatar,
-  BackButton,
+  SignOut,
+  SignOutText,
 } from './styles';
 
 interface ProfileFormData {
@@ -44,11 +46,15 @@ const Profile: React.FC = () => {
   const confirmPasswordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
 
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, signOut } = useAuth();
 
   const handleGoBack = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
+
+  const handleSignOut = useCallback(() => {
+    signOut();
+  }, []);
 
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
@@ -113,8 +119,6 @@ const Profile: React.FC = () => {
 
         navigation.goBack();
       } catch (err) {
-        console.log(err);
-
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
 
@@ -227,6 +231,11 @@ const Profile: React.FC = () => {
                 Confirmar mudanças
               </Button>
             </Form>
+
+            <SignOut onPress={handleSignOut}>
+              <SignOutText>Sair</SignOutText>
+              <Icon name="log-out" size={20} color="#fff" />
+            </SignOut>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

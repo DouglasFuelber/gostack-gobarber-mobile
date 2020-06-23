@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const BackButton = styled.TouchableOpacity`
-  margin-top: 80px;
+  margin-top: 100px;
 `;
 
 export const Title = styled.Text`
@@ -25,4 +25,18 @@ export const UserAvatar = styled.Image`
   border-radius: 80px;
   height: 160px;
   width: 160px;
+`;
+
+export const SignOut = styled.TouchableOpacity`
+  align-items: center;
+  flex-direction: row;
+  margin-top: 16px;
+  justify-content: center;
+`;
+
+export const SignOutText = styled.Text`
+  color: #fff;
+  font-size: 18px;
+  font-family: 'RobotoSlab-Regular';
+  margin-right: 16px;
 `;
